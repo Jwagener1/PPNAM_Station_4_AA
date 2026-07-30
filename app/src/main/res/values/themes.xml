@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Dark, not Light: this theme is only ever seen as the cold-start splash before Compose
+        draws its first frame. windowBackground is graphite_background so the splash is
+        indistinguishable from the first composed frame (see ui.theme.GraphiteBackground).
+
+        The system bars are transparent because MainActivity calls enableEdgeToEdge() — the app
+        draws its own bar colours behind them and pads content with window insets.
+    -->
+    <style name="Theme.PPNAMStation4AA" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/graphite_background</item>
+        <item name="android:colorBackground">@color/graphite_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

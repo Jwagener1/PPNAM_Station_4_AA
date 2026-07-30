@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 12+ (API 31) backup and device-transfer rules.
+
+  Each handheld must have its own broker credential bound to its own client ID, so carrying one
+  device's credential onto another via backup/restore is exactly the sharing this must prevent.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="ppnam_secure_credentials.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="ppnam_secure_credentials.xml" />
+    </device-transfer>
+</data-extraction-rules>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 11 and below (API < 31) backup rules. Same intent as data_extraction_rules.xml, which
+  supersedes this file on API 31+ — both are declared because the platform picks by version.
+
+  The Keystore key protecting the credential is non-exportable and never backed up, so a restored
+  credential record could never be decrypted — it would only ever present as a corrupt credential.
+  A restored handheld must be re-provisioned, which is exactly what excluding this achieves.
+-->
+<full-backup-content>
+    <exclude domain="sharedpref" path="ppnam_secure_credentials.xml" />
+</full-backup-content>
